@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "TikTok Clean Video Downloader",
+  "version": "4.0.0",
+  "description": "One-click no-watermark TikTok video downloader.",
+  "permissions": [
+    "downloads"
+  ],
+  "host_permissions": [
+    "*://*.tiktok.com/*",
+    "https://www.tikwm.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.tiktok.com/*"],
+      "js": ["content.js"],
+      "css": ["styles.css"],
+      "run_at": "document_idle"
+    }
+  ]
+}
